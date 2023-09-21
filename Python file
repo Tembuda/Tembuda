@@ -1,0 +1,25 @@
+def count_word_occurrences(text, word_to_count):
+    # Convert both the text and word to lowercase for case-insensitive matching
+    text = text.lower()
+    word_to_count = word_to_count.lower()
+
+    words = text.split()
+    word_count = words.count(word_to_count)
+    return word_count
+
+def main():
+    user_text = """Data science is an interdisciplinary academic ﬁeld that uses statistics scientiﬁc computing scientiﬁc methods processes algorithms and systems to extract or extrapolate knowledge and insights from noisy structured and unstructured data Data science also integrates domain knowledge from the underlying application domain natural sciences information technology and medicine Data science is multifaceted and can be described as a science a research paradigm a research method a discipline a workﬂow and a profession Data science is a concept to unify statistics data analysis informatics and their related methods to understand and analyze actual phenomena with data It uses techniques and theories drawn from many ﬁelds within the context of mathematics statistics computer science information science and domain knowledge However data science is diﬀerent from computer science and information science Turing Award winner Jim Gray imagined data science as a fourth paradigm of science empirical theoretical computational and now data driven and asserted that everything about science is changing because of the impact of information technology and the data deluge A data scientist is a professional who creates programming code and combines it with statistical knowledge to create insights from data"""
+
+    while True:
+        user_word = input("Enter the word to search for: ")
+
+        word_count = count_word_occurrences(user_text, user_word)
+
+        print(f"The word '{user_word}' appears {word_count} times in the provided text.")
+
+        another_search = input("Do you want to search for another word? (Y/n): ").lower()
+        if another_search != "y":
+            break
+
+if _ _name_ _ == "_ _main_ _":
+    main()
